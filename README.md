@@ -1,2 +1,4 @@
-# beego-vue-admin 开源快速项目模板
+<div>
+<img src="https://gaolengimgs.oss-cn-shanghai.aliyuncs.com/beegovue.png"  />
+</div>
 
