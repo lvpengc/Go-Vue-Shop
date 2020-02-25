@@ -8,4 +8,4 @@
 <img src="https://img.shields.io/badge/beego-1.10-red"/>
 </div>
 
-# 基于Beego和VueElement的前后端分离的后台管理系统
+## 基于Beego和VueElement的前后端分离后台管理系统
