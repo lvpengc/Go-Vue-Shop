@@ -9,7 +9,7 @@
 <img src="https://img.shields.io/badge/docker-2.0-blue"/>
 </div>
 
-##基于Golang和Vue实现的前后端分离电商系统  
+## 基于Golang和Vue实现的前后端分离的电商系统  
 
 ## 项目结构
 
@@ -70,5 +70,4 @@
 项目实现前后分离，后端采用 go-micro 实现微服务化
 ![架构设计](./design.png)
 
-
-                                                                                                                                                                                                        
+              
