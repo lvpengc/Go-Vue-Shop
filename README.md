@@ -6,7 +6,6 @@
 <img src="https://img.shields.io/badge/gin-1.10-red"/>
 <img src="https://img.shields.io/badge/gomicro-3.5-red"/>
 <img src="https://img.shields.io/badge/vue-2.0-blue"/>
-<img src="https://img.shields.io/badge/uni-app-1.0-blue"/>
 <img src="https://img.shields.io/badge/docker-2.0-blue"/>
 </div>
 
