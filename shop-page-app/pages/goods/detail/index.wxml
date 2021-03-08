@@ -1,0 +1,103 @@
+<!-- 商品宣传图片轮播 -->
+<view class="gallery">
+  <swiper class="gallery" indicator-dots="true" autoplay="true" interval="3000" duration="500" circular="false">
+    <block wx:for="{{ goods_data.gallery }}" wx:key="id" >
+      <swiper-item>
+        <image src="{{ item }}" class="slide-image" mode="scaleToFill"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 商品信息 -->
+<view class="info">
+  <view class="info-basic">
+    <view class="info-detail">
+      <view class="info-price">
+        <view class="info-price-now">￥{{ goods_data.price }}</view>
+        <view class="info-price-mark">￥{{ goods_data.marked_price }}</view>
+      </view>
+      <view class="info-name">{{ goods_data.name }}</view>
+    </view>
+    <button class="info-btn" open-type="share">
+      <image src="/static/images/share.png" mode="aspectFit"></image>
+      <view>分享</view>
+    </button>
+  </view>
+  <view class="info-desc">
+    <text>{{ goods_data.brief }}</text>
+  </view>
+</view>
+<!-- 规格选择 -->
+<view class="choose" bindtap="showStockChoose" wx:if="{{ goods_data.comment.length > 0 }}">
+  <view class="choose-status">{{ is_choose ? "已选择" : "选择" }}</view>
+  <view class="choose-data">
+    <text wx:if="{{ !is_choose }}">规格参数选择</text>
+    <text wx:else>{{ choose_stock }}</text>
+  </view>
+  <view class="choose-icon">
+    <image mode="aspectFit" src="/static/images/action-point.png"></image>
+  </view>
+</view>
+<!-- 评价 -->
+<view class="comment">
+  <view class="comment-head">
+    <view>评价</view>
+    <navigator url="javascript:;">
+    查看全部>>
+    </navigator>
+  </view>
+  <view class="comment-body">
+    <view class="comment-user">
+      <image class="comment-avatar" src="{{ recent_comment .avatar }}"></image>
+      <view style="margin-left: 10rpx;height: 80rpx;">
+        <view class="comment-name">{{ recent_comment .nickname }}</view>
+        <star
+          type="2"
+          score="{{ recent_comment .star }}"
+          class="comment-star"
+        ></star>
+      </view>
+    </view>
+    <view class="comment-desc">{{ recent_comment.content }}</view>
+    <scroll-view class="comment-img" scroll-x="true" scroll-left="{{ scrollLeft }}">
+      <image wx:for="{{ recent_comment.pic_urls }}" wx:key="id" src="{{ item }}" mode="aspectFill" data-list="{{ recent_comment.pic_urls }}" data-src="{{ item }}" bindtap="preview"></image>
+    </scroll-view>
+  </view>
+</view>
+<!-- 详情介绍 -->
+<view class="detail">
+  <view class="detail-title">详情介绍</view>
+  <rich-text type="text" nodes="{{ goods_data.detail }}"></rich-text>
+</view>
+<!-- 常见问题 -->
+<view class="question">
+  <view class="question-title">——<text>常见问题</text>——</view>
+  <view class="question-item" wx:for="{{ common_question }}" wx:key="id">
+    <view class="question-subject">· {{ item.subject }}</view>
+    <view class="question-answer">{{ item.answer }}</view>
+  </view>
+</view>
+<!-- 规格选择 -->
+<view class="stock">
+</view>
+<!-- 底部按钮 -->
+<view class="action">
+    <button class="action-l" bindtap="switchCollect">
+      <view class="action-l-img">
+        <image src="{{ is_collect ? '/static/images/star-on.png' : '/static/images/star-off.png' }}" mode="aspectFit"></image>
+      </view>
+      <view class="action-l-text">收藏</view>
+    </button>
+    <button class="action-l" bindtap="gotoCart">
+      <view class="action-l-img">
+        <image src="/static/images/cart-in.png" bindtap="switchCollect" mode="aspectFit"></image>
+      </view>
+      <view class="action-l-text">购物车</view>
+    </button>
+    <button class="action-r" bindtap="addToCart">
+    加入购物车
+    </button>
+    <button class="action-r" bindtap="buyNow">
+    立即购买
+    </button>
+</view>

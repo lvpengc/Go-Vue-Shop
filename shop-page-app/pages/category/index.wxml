@@ -1,0 +1,29 @@
+<!-- 分类滚动列表 -->
+<view class="category-scroll">
+  <scroll-view scroll-x="true" scroll-left="{{ scrollLeft }}">
+    <view catchtap="switchTab" data-index="{{ item.id }}" class="category-item {{ active_tab == item.id ? 'active' : '' }}" style="width:{{ category_arr.length > 4 ? 22 : 100/category_arr.length }}%" wx:for="{{ category_arr }}" wx:key="id">
+    {{ item.name }}
+    </view>
+  </scroll-view>
+</view>
+<!-- 分类信息 -->
+<view class="category-data">
+  <view class="category-info">
+    <image src="{{ active_category_icon_url }}" class="category-info-icon"></image>
+    <view class="category-info-text">
+      <text class="category-info-name">{{ active_category_name }}</text>
+      <text class="category-info-desc">{{ active_category_desc }}</text>
+    </view>
+  </view>
+  <view class="category-goods">
+      <view class="category-goods-item" wx:for="{{ goods_arr[active_tab] }}" wx:key="item">
+    <navigator url="/pages/goods/detail/index?id={{ item.id }}">
+        <view class="category-goods-item-box">
+          <image src="{{ item.pic_url }}" class="category-goods-item-img" mode="widthFix"></image>
+          <text class="category-goods-item-name">{{ item.name }}</text>
+          <text class="category-goods-item-price">￥{{ item.price }}</text>
+        </view>
+    </navigator>
+      </view>
+  </view>
+</view>

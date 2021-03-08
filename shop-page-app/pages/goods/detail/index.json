@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "star": "../../components/star/star"
+  }
+}

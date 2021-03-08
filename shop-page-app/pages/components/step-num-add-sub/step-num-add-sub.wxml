@@ -1,0 +1,6 @@
+<!-- 数值加减按钮组件 -->
+<view class="step-num-add-sub">
+  <button class="step-num-btn" disabled="{{ number <= 1 ? true : false }}" catchtap="numSub">-</button>
+  <input type="num" class="step-num-input" value="{{ number }}" bindinput="numChange"></input>
+  <button class="step-num-btn" catchtap="numAdd">+</button>
+</view>

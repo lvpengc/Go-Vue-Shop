@@ -1,0 +1,18 @@
+.comment-star{
+  padding:0rpx;
+  display:inline-block;
+  flex-direction:row;
+}
+.star-pos {
+  display:flex;
+  flex-direction:row;
+}
+.star {
+  width: 25rpx;
+  height: 25rpx;
+  background-size: 25rpx 25rpx;
+  margin-left: 5rpx;
+}
+.star:first-child {
+  margin-left: 0rpx;
+}

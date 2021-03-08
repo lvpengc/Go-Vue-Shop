@@ -1,0 +1,73 @@
+<!-- 推广 banner -->
+<view class="banner">
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="500" circular="false">
+    <block wx:for="{{ banner_arr }}" wx:key="id" >
+      <swiper-item>
+        <image src="{{ item.img_url }}" class="slide-image" mode="scaleToFill"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 推荐类目，最好四个 -->
+<view class="category shadow-div data-box">
+  <view class="category-item" wx:for="{{ category_arr }}" wx:key="id" >
+    <navigator url="/pages/category/index?id={{ item.id }}">
+      <image src="{{ item.icon_url }}" class="category-item-icon"></image>
+      <text class="category-item-text">{{ item.name }}</text>
+    </navigator>
+  </view>
+</view>
+<!-- 今日优惠券 -->
+<view class="coupon shadow-div data-box" wx:if="{{ coupon_arr.length > 0 }}">
+  <view class="data-box-header">
+    <text class="data-box-title">今日优惠券</text>
+    <text class="data-box-action">查看更多>></text>
+  </view>
+  <view class="data-box-body">
+    <view class="coupon-item" wx:for="{{ coupon_arr }}" wx:key="id">
+      <view class="coupon-item-info">
+        <view class="coupon-item-row coupon-item-info-name">
+          <text class="coupon-item-row-l" style="font-size:50rpx;">￥{{ item.amount }}</text>
+          <text class="coupon-item-row-r">{{ item.name }}</text>
+        </view>
+        <view class="coupon-item-row coupon-item-info-limit">
+          <text class="coupon-item-row-l">满 {{ item.consum_min }} 元使用</text>
+          <text class="coupon-item-row-r">{{ item.limit_msg }}</text>
+        </view>
+        <view class="coupon-item-row coupon-item-info-expir">
+          <text>有效期：{{ item.days }}天</text>
+        </view>
+      </view>
+      <view class="coupon-item-action">
+        <button class="coupon-item-action-btn">领取</button>
+        <!-- <text class="coupon-item-action-text">已领取</text> -->
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 推荐商品 -->
+<view class="goods shadow-div data-box">
+  <view class="data-box-header">
+    <text class="data-box-title">好货推荐</text>
+  </view>
+  <view class="data-box-body">
+    <navigator wx:for="{{ goods_arr }}" wx:key="id" url="/pages/goods/detail/index?id={{ item.id }}">
+      <view class="goods-item" >
+        <view class="goods-item-img">
+          <image src="{{ item.pic_url }}"></image>
+        </view>
+        <view class="goods-item-price">
+        ￥{{ item.price }}
+        </view>
+        <view class="goods-item-info">
+          <view class="goods-item-name">
+          {{ item.name }}
+          </view>
+          <view class="goods-item-desc goods-item-info-d">
+          {{ item.brief }}
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

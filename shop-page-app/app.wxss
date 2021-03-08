@@ -1,0 +1,43 @@
+/**app.wxss**/
+page {
+  background-color: #F1F1F1;
+} 
+
+view, image, text, navigator {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+view, text {
+  font-size: 29rpx;
+  color: #333;
+}
+/* 阴影 */
+.shadow-div{
+  box-shadow: 0 0 10rpx #AEAEAE35;
+}
+/* 数据DIV */
+.data-box {
+  display: block;
+  width: 100%;
+  margin-top: 10rpx;
+  background-color: #FFFFFF;
+  padding: 0 10rpx;
+}
+.data-box-header{
+  text-align: center;
+  padding: 20rpx 0;
+}
+.data-box-title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.data-box-action {
+  position: absolute;
+  right: 20rpx;
+}
+.data-box-body {
+  padding: 20rpx 0;
+  border-top: 1rpx solid #E4E4E4;
+}

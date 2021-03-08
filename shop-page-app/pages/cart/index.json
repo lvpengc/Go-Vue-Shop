@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "step-num-add-sub": "../components/step-num-add-sub/step-num-add-sub"
+  }
+}

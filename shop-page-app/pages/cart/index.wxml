@@ -1,0 +1,42 @@
+<view calss="cart-goods">
+  <view class="empty" wx:if="{{ cart_goods_arr.length <= 0 }}">
+  <image class="empty-image" mode="aspectFit" src="/static/images/cart-empty.png?w=100"></image>
+  购物车是空的哦，快去逛逛吧~
+  </view>
+  <checkbox-group bindchange="changeItem" wx:else>
+    <view class="cart-goods-item" wx:for="{{ cart_goods_arr }}" wx:key="id">
+      <view class="cart-goods-item-checkbox">
+        <checkbox value="{{item.id}}" checked="{{item.is_checked}}" ></checkbox>
+      </view>
+      <view class="cart-goods-item-img">
+        <image src="{{ item.pic_url }}" mode="widthFix"></image>
+      </view>
+      <view class="cart-goods-item-info">
+        <text class="cart-goods-item-info-name">{{ item.goods_name }}</text>
+        <!-- 需要弹出商品详情页的规格选择用于更改stock_id -->
+        <text class="cart-goods-item-info-stock">{{ item.goods_stock }}</text>
+        <view class="cart-goods-item-info-bottom">
+          <text class="cart-goods-item-info-price">￥{{ item.price }}</text>
+          <step-num-add-sub
+            number="{{ item.number }}"
+            data="{{ { id: item.id } }}"
+            bind:numberChange="goodsNumChange"
+            class="cart-goods-item-info-num">            
+          </step-num-add-sub>
+        </view>
+      </view>
+    </view>
+  </checkbox-group>
+</view>
+
+<view class="cart-bottom" wx:if="{{ cart_goods_arr.length > 0 }}">
+  <view class="checkbox">
+    <checkbox bindtap="checkedAll" checked="{{is_select_all}}">全选</checkbox>
+  </view>
+  <view class="total-fee">{{!is_edit ? '￥'+ total_fee : ''}}</view>
+  <view class='action-btn'>
+    <button class="{{!is_edit ? 'edit' : 'sure'}}" bindtap="editCart">{{!is_edit ? '编辑' : '完成'}}</button>
+    <button class="delete" bindtap="deleteCart" wx:if="{{is_edit}}">删除</button>
+    <button class="checkout" bindtap="checkoutOrder" wx:if="{{!is_edit}}">结算</button>
+  </view>
+</view>

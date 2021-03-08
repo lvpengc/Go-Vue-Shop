@@ -1,0 +1,131 @@
+/* pages/home/index.wxss */
+/* banner */
+.banner{
+  height: 360rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+/* 类目推荐 */
+.category-item{
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+.category-item navigator {
+  padding: 20rpx;
+}
+.category-item-icon {
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+  margin: 0 auto;
+}
+.category-item-text {
+  display: block;
+  margin-top: 10rpx;
+}
+/* 优惠券 */
+.coupon-item {
+  display: flex;
+  background-color: #ff33008c;
+  margin-top: 10rpx;
+  padding: 10rpx 30rpx;
+  border-radius: 10rpx;
+}
+.coupon-item:first-child {
+  margin-top: 0;
+}
+.coupon-item text {  
+  color: white;
+}
+.coupon-item-info {
+  display: inline-block;
+  width: 80%;
+}
+.coupon-item-action {
+  display: inline-block;
+  width: 20%;
+  padding: 0rpx;
+  text-align: center;
+}
+.coupon-item-action-btn {
+  width: 120rpx;
+  padding: 0rpx;
+  font-size: 24rpx;
+  color: #ff33008c;
+  top: 45rpx;
+  font-weight: bold;
+}
+.coupon-item-action-text {
+  width: 120rpx;
+  padding: 0rpx;
+  font-size: 24rpx;
+  position: relative;
+  top: 45rpx;
+}
+.coupon-item-row {
+  margin: 2rpx 0;
+}
+.coupon-item-row-l, .coupon-item-row-r {
+  width: 50%;
+  display: inline-block;
+}
+.coupon-item-info-name text {  
+  font-size: 42rpx;
+}
+.coupon-item-info-limit text {  
+  font-size: 24rpx;
+}
+.coupon-item-info-expir text {  
+  font-size: 26rpx;
+}
+/* 推荐商品列表 */
+.goods-item {
+  display: flex;
+  border-bottom: 1rpx solid #E4E4E4;
+  /* margin-top: 10rpx; */
+  padding: 20rpx 30rpx;
+}
+.goods-item:first-child {
+  margin-top: 0;
+}
+.goods-item-img {
+  display: inline-block;
+  width: 30%;
+}
+.goods-item-img image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.goods-item-price{
+  color: red;
+  font-size: 50rpx;
+  display: inline-block;
+  width: 20%;
+  margin: auto auto;
+}
+.goods-item-info {
+  display: inline-block;
+  width: 50%;
+}
+.goods-item-name{
+  text-align: right;
+  font-size: 36rpx;
+  color: #333333;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 70rpx;
+}
+.goods-item-desc {
+  text-align: right;
+  font-size: 26rpx;
+  color: #868686;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 50rpx;
+}
