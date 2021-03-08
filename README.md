@@ -7,6 +7,7 @@
 <img src="https://img.shields.io/badge/gomicro-3.5-red"/>
 <img src="https://img.shields.io/badge/vue-2.0-blue"/>
 <img src="https://img.shields.io/badge/docker-2.0-blue"/>
+<img src="https://img.shields.io/badge/redis-6.0-red"/>
 </div>
 
 ## 基于Golang和Vue实现的前后端分离的电商系统  
