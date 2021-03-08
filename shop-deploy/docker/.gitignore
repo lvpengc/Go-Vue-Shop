@@ -1,0 +1,9 @@
+.idea
+.project
+.history
+.DS_Store
+
+.env
+/.logs
+/.data
+*/main

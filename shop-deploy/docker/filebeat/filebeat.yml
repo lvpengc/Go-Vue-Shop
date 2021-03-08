@@ -1,0 +1,34 @@
+# 定义filebeat的日志收集入口
+filebeat.inputs:
+  - type: syslog
+    protocol.tcp:
+      host: "0.0.0.0:8080"
+
+# 输出
+# output.elasticsearch:
+#   hosts: ["elasticsearch:9200"]
+#   username: "elastic"
+#   password: "root"
+output.logstash:
+  hosts: ["logstash:5044"]
+setup.kibana:
+  host: "kibana:5601"
+# setup.dashboards.enabled: true
+
+#==================== Elasticsearch template setting ==========================
+setup.template.enabled: false
+setup.template.name: "filebeat.template.json"
+setup.template.fields: "./config/filebeat.template.json"
+setup.template.overwrite: true
+# 过滤掉一些不必要字段#
+processors:
+  - drop_fields:
+      fields: ["input_type", "offset", "stream", "beat"]
+  # - add_locale:
+  #     format: offset
+  # - timestamp:
+  #     field: "@timestamp"
+  #     layouts:
+  #       - "2006-01-02T15:04:05Z"
+  #       - "2006-01-02T15:04:05.999Z"
+  #     timezone: "Asia/Shanghai"

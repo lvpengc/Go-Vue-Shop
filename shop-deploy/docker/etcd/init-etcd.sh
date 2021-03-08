@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "etcd init..."
+echo "etcd put /easymall/admin_api/gorm"
+etcdctl put /easymall/admin_api/gorm "{\"debug\": true,\"db_type\":\"mysql\",\"max_lifetime\":7201,\"max_open_conns\":20,\"max_idle_conns\":5}"
+echo "etcd put /easymall/admin_api/web"
+etcdctl put /easymall/admin_api/web "{\"addr\": \"127.0.0.1:80\",\"read_timeout\": 5,\"write_timeout\": 10,\"idle_timeout\": 15, \"set_mode\": \"debug\"}"
+echo "etcd put /easymall/config/mysql"
+etcdctl put /easymall/config/mysql "{\"host\": \"mysql:3306\",\"password\": \"root\",\"database\": \"easy_mall\",\"user\": \"root\",\"charset\": \"utf8mb4\"}"
+echo "etcd put /easymall/config/redis"
+etcdctl put /easymall/config/redis "{\"host\": \"redis:6379\",\"password\": \"\",\"database\": 0,\"maxOpenConns\": 10,\"maxIdleConns\": 2}"
+echo "etcd put /easymall/config/nsq"
+etcdctl put /easymall/config/nsq "{\"host\": \"nsqd:4150\"}"

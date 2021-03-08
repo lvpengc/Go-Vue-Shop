@@ -1,0 +1,11 @@
+http.host: "0.0.0.0"
+config.reload.automatic: true
+path.config: "/usr/share/logstash/pipeline"
+
+xpack.monitoring.elasticsearch.hosts: ["http://elasticsearch:9200"]
+
+## X-Pack security credentials
+#
+xpack.monitoring.enabled: false
+xpack.monitoring.elasticsearch.username: elastic
+xpack.monitoring.elasticsearch.password: root

@@ -1,0 +1,80 @@
+###########################################################
+###################### General Setup ######################
+###########################################################
+
+### Paths #################################################
+
+# 代码主机地址
+APP_CODE_PATH_HOST=../easy-mall-services
+
+# 代码容器地址
+APP_CODE_PATH_CONTAINER=/var/www
+
+# 容器数据主机存储地址
+DATA_PATH_HOST=./.data
+
+# Windows下; Linux下:
+COMPOSE_PATH_SEPARATOR=;
+
+# COMPOSE 项目名称
+# COMPOSE_PROJECT_NAME=easy-mall-dock
+
+# COMPOSE 文件名称
+COMPOSE_FILE=docker-compose.yml
+
+# Docker 在主机的IP
+DOCKER_HOST_IP=10.0.80.1
+
+# Windows 路径转换
+COMPOSE_CONVERT_WINDOWS_PATHS=1
+
+# 时区
+TIMEZONE=PRCAsia/Shanghai
+
+# GOPROXY
+GOPROXY=https://goproxy.cn
+
+### WORKSPACE 开发时用 #############################################
+MICRO_WEB_PORT=8082
+
+### MYSQL #################################################
+MYSQL_VERSION=5.7
+MYSQL_DATABASE=easy_mall
+MYSQL_USER=default
+MYSQL_PASSWORD=secret
+MYSQL_PORT=33063
+MYSQL_ROOT_PASSWORD=root
+MYSQL_ENTRYPOINT_INITDB=./mysql/docker-entrypoint-initdb.d
+
+### REDIS #################################################
+REDIS_PORT=63793
+
+### ETCD ##################################################
+ETCD_VERSION=v3.4.0
+
+### ETCDKEEPER ############################################
+ETCDKEEPER_PORT=8068
+
+### NSQADMIN ##############################################
+NSQADMIN_PORT=4171
+
+### ELK_VERSION ###########################################
+
+# 可用版本参考https://hub.docker.com/_/elasticsearch
+ELK_VERSION=7.5.0
+KIBANA_HTTP_PORT=5601
+
+### FILEBEAT ##############################################
+FILEBEAT_PORT=9082
+
+### ADMIN #############################################
+ADMIN_PORT_HTTP=80
+ADMIN_PORT_HTTPS=443
+
+### ADMIN_API #############################################
+ADMIN_API_PORT_HTTP=8080
+ADMIN_API_PORT_HTTPS=8443
+
+### APP_API #############################################
+APP_API_PORT_HTTP=8090
+APP_API_PORT_HTTPS=9443
