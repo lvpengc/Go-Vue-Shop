@@ -6,4 +6,4 @@
 <img src="https://img.shields.io/badge/gin-1.10-red"/>
 </div>
 
-## 基于Gin和VueElement的前后端分离后台的管理系统
+## 基于Gin和VueElement的前后端分离电商后台管理系统
