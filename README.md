@@ -10,7 +10,7 @@
 <img src="https://img.shields.io/badge/redis-6.0-red"/>
 </div>
 
-## 基于Golang和Vue实现的前后端分离的电商系统  
+## 基于Gin和Vue实现的前后端分离的电商系统  
 
 ## 项目结构
 
